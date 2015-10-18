@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SDK Create Object Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="public/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="public/css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--NAVBAR-->
+  <nav>
+    <div id="navbar" class="nav-wrapper center">
+      <img id="logo" src="public/images/stamplay_logo.png"/>
+    </div>
+  </nav>
+<!--ADD SECTION-->
+
+  <div id="createSection" class="row container z-depth-3">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <br>
+          <input 
+          placeholder="Object Name.." 
+          id="first_name" 
+          type="text">
+        </div>
+      </div>
+      <div class="row center">
+        <div class="input-field col s12">
+          <a id="btn" class="waves-effect waves-light btn-large">
+          <i class="fa fa-plus-circle right"></i>Create Object</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+<!--SDK-->
+<script src="//drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/1.3.0/stamplay.min.js"></script>
+<script src="./bower_components/jquery/dist/jquery.js"></script>
+<script src="./public/js/materialize.min.js"></script>
+<script src="public/app.js"></script>
+</body>
+</html>

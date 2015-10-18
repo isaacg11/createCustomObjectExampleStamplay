@@ -1,0 +1,10 @@
+{
+  "appId": "createcustomobjectutorial",
+  "apiKey": "9312e345aa4eba04a513fbc990c1f8c17cc2ba9a7fd8f836659d259f1d4b6886",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

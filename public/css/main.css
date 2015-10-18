@@ -1,0 +1,21 @@
+
+body, html {
+	font-family: "Roboto";
+}
+
+#navbar{
+	background-color: #272D4E;
+}
+#logo{
+	height: 50px;
+	width: 50px;
+	margin-top: 5px;
+
+}
+#createSection{
+	margin-top: 150px;
+	width: 30%;
+}
+#btn{
+	background-color: #414b82;
+}
