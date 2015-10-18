@@ -13,8 +13,7 @@
       <img id="logo" src="public/images/stamplay_logo.png"/>
     </div>
   </nav>
-<!--ADD SECTION-->
-
+<!--CREATE SECTION-->
   <div id="createSection" class="row container z-depth-3">
     <form class="col s12">
       <div class="row">
@@ -22,17 +21,24 @@
           <br>
           <input 
           placeholder="Object Name.." 
-          id="first_name" 
+          id="objectName" 
           type="text">
         </div>
       </div>
       <div class="row center">
         <div class="input-field col s12">
-          <a id="btn" class="waves-effect waves-light btn-large">
+          <a 
+          onclick="createObject()" 
+          id="btn" 
+          class="waves-effect waves-light btn-large">
           <i class="fa fa-plus-circle right"></i>Create Object</a>
         </div>
       </div>
     </form>
+  </div>
+<!--OBJECT OUTPUT-->
+  <div>
+    
   </div>
 
 
