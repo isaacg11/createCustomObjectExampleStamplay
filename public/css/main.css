@@ -14,8 +14,11 @@ body, html {
 }
 #createSection{
 	margin-top: 150px;
-	width: 30%;
+	width: 40%;
 }
 #btn{
 	background-color: #414b82;
+}
+#objectOutput{
+	width: 40%;
 }

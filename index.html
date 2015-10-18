@@ -17,10 +17,10 @@
   <div id="createSection" class="row container z-depth-3">
     <form class="col s12">
       <div class="row">
-        <div class="input-field col s12">
+        <div onclick="reset()" class="input-field col s12">
           <br>
-          <input 
-          placeholder="Object Name.." 
+          <input  
+          placeholder="Object Name..." 
           id="objectName" 
           type="text">
         </div>
@@ -36,10 +36,18 @@
       </div>
     </form>
   </div>
+  <br>
 <!--OBJECT OUTPUT-->
-  <div>
-    
-  </div>
+  <ul id="objectOutput" class="collection container z-depth-3">
+      <li class="collection-item"><b>Object Name:</b>
+      <span id="objectOutputName"></span></li>
+      <li class="collection-item"><b>Dt_Created: </b>
+      <span id="objectOutputDate"></span></li>
+      <li class="collection-item"><b>ID: </b>
+      <span id="objectOutputID"></span></li>
+  </ul>
+
+
 
 
 
