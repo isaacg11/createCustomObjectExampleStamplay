@@ -1,6 +1,10 @@
 
 body, html {
 	font-family: "Roboto";
+	min-height: 100vh;
+	min-width: 100vw;
+	position: cover;
+	background-color: #EEEEEE;
 }
 
 #navbar{
@@ -13,12 +17,43 @@ body, html {
 
 }
 #createSection{
-	margin-top: 150px;
 	width: 40%;
+	background-color: #FFFFFF;
 }
 #btn{
-	background-color: #414b82;
+	background-color: #7A7F99;
 }
 #objectOutput{
 	width: 40%;
+	margin-top: 110px;
 }
+#input{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.header{
+	color: #414B82;
+}
+.data{
+	color: #B0B2B5;
+}
+#objectOutputName{
+	color: #414B82
+}
+#objectOutputDate{
+	color: #414B82
+}
+#objectOutputID{
+	color: #414B82
+}
+.input-field label {
+     color: #000;
+}
+.input-field input[type=text]:focus + label {
+     color: #000;
+}
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid #FFD700;
+     box-shadow: 0 1px 0 0 #FFD700;
+}
+
