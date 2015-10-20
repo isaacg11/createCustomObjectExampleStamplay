@@ -68,3 +68,37 @@ function updateObject(){
 	});
 }
 
+/*----------------------*/
+/* QUERY OBJECT SCRIPT  */
+/*----------------------*/
+
+function queryObject(){
+	var cuisine = document.getElementById('cuisine').value;
+	var city = document.getElementById('city').value;
+	
+	var objectCollection = new Stamplay.Cobject('resturaunt').Collection;
+	objectCollection.equalTo("cuisine", cuisine).equalTo("city", city).fetch().then(function() {
+		var cuisine = objectCollection.instance[0].get('cuisine');
+		var resturaunt = objectCollection.instance[0].get('resturaunt');
+		var city = objectCollection.instance[0].get('city');
+		var address = objectCollection.instance[0].get('address');
+
+		document.getElementById('queryOutputName').innerHTML = resturaunt; 
+		document.getElementById('queryOutputCuisine').innerHTML = cuisine; 
+		document.getElementById('queryOutputCity').innerHTML = city; 
+		document.getElementById('queryOutputAddress').innerHTML = address; 
+
+		document.getElementById('cuisine').value = ""; 
+		document.getElementById('city').value = ""; 
+	});
+}
+
+function reset(){
+	document.getElementById('queryOutputName').innerHTML = ''; 
+	document.getElementById('queryOutputCuisine').innerHTML = ''; 
+	document.getElementById('queryOutputCity').innerHTML = ''; 
+	document.getElementById('queryOutputAddress').innerHTML = ''; 
+}
+
+
+

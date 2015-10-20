@@ -64,16 +64,10 @@ body, html {
 .data{
 	color: #B0B2B5;
 }
-#objectOutputName{
-	color: #414B82
+.category{
+	color: #B0B2B5;
 }
-#objectOutputAuthor{
-	color: #414B82
-}
-#objectOutputDate{
-	color: #414B82
-}
-#objectOutputID{
+.outputData{
 	color: #414B82
 }
 .input-field label {
@@ -86,5 +80,18 @@ body, html {
      border-bottom: 1px solid #FFD700;
      box-shadow: 0 1px 0 0 #FFD700;
 }
-
+#options{
+	margin-top: 30px;
+	width: 40%;
+}
+.queryheader{
+	color: #414B82;
+}
+#queryResults{
+	width: 40%;
+	margin-top: 17px;
+}
+.ptag{
+	padding-top: 10px;
+} 
 
