@@ -8,13 +8,29 @@ body, html {
 }
 
 #navbar{
-	background-color: #272D4E;
+	background-color: #3D3F4D;
 	height: 80px;
 }
 #logo{
   	padding: 10px;
     height: 70px;
 	margin-top: 5px;
+}
+.tabs{
+	margin-top: 17px;
+	min-width: 100vw;
+}   
+.tabs .tab a{
+	color: #272D4E;
+}
+.tabs .tab a:hover{
+	color: #272D4E;
+}
+.tab-row {
+	padding:0 !important;
+}
+.indicator {
+	background-color: #FBC02D !important;
 }
 .github{
 	background-color: #FBC02D;
@@ -26,16 +42,16 @@ body, html {
 	background-color: #FBC02D;
 	color: #000;
 }
-#createSection{
+.createSection{
 	width: 40%;
 	background-color: #FFFFFF;
 }
 #btn{
 	background-color: #7A7F99;
 }
-#objectOutput{
+.objectOutput{
 	width: 40%;
-	margin-top: 110px;
+	margin-top: 60px;
 }
 #input{
 	padding-left: 25px;
@@ -48,6 +64,9 @@ body, html {
 	color: #B0B2B5;
 }
 #objectOutputName{
+	color: #414B82
+}
+#objectOutputAuthor{
 	color: #414B82
 }
 #objectOutputDate{

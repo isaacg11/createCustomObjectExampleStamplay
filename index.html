@@ -13,24 +13,31 @@
       <a href="" class="brand-logo center">
         <img id="logo" src="public/images/stamplay_logo.png"/>
       </a>
-      <ul class="right">
-        <li>
-          <a 
-          target="_blank" 
-          href="https://github.com/isaacg11/createCustomObjectExampleStamplay"
-          class="waves-effect waves-light btn-large github">
-          <i class="fa fa-github left"></i>View Code
-          </a>
-        </li>
-      </ul>
     </div>
   </nav>
+<!--TABS-->
+  <div class="row">
+    <div class="col s12 tab-row">
+      <ul class="tabs">
+        <li class="tab col s3">
+          <a href="#create" class="active">CREATE OBJECT</a></li>
+        <li class="tab col s3">
+          <a href="#update">UPDATE OBJECT</a></li>
+        <li class="tab col s3">
+          <a href="#query">QUERY OBJECT</a></li>
+        <li class="tab col s3">
+          <a href="#rate">RATE/VOTE</a></li>
+      </ul>
+    </div>
+  </div>
 
 <!--OBJECT OUTPUT-->
-  <ul id="objectOutput" class="collection container z-depth-1">
-      <li class="collection-item center header"><b>New Object Data</b>
-      <li class="collection-item data"><b>Object Name:</b>
+  <ul id="create" class="collection container z-depth-1 objectOutput">
+      <li class="collection-item center header"><b>New Book Data</b>
+      <li class="collection-item data"><b>Book Title:</b>
       <span id="objectOutputName"></span></li>
+      <li class="collection-item data"><b>Author:</b>
+      <span id="objectOutputAuthor"></span></li>
       <li class="collection-item data"><b>Dt_Created: </b>
       <span id="objectOutputDate"></span></li>
       <li class="collection-item data"><b>ID: </b>
@@ -39,7 +46,7 @@
   <br>
   <br>
 <!--CREATE SECTION-->
-  <div id="createSection" class="row container z-depth-1">
+  <div id="create" class="row container z-depth-1 createSection">
     <form class="col s12">
       <div class="row">
         <div 
@@ -48,8 +55,20 @@
         class="input-field col s12">
           <br>
           <input  
-          placeholder="Object Name..." 
+          placeholder="Book Title..." 
           id="objectName" 
+          type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div 
+        id="input"
+        onclick="reset()" 
+        class="input-field col s12">
+        <br>
+        <input  
+          placeholder="Author..." 
+          id="objectAuthor" 
           type="text">
         </div>
       </div>
@@ -59,7 +78,7 @@
           onclick="createObject()" 
           id="btn" 
           class="waves-effect waves-light btn-large">
-          <i class="fa fa-plus-circle right"></i>Create Object</a>
+          <i class="fa fa-plus-circle right"></i>Create Book</a>
         </div>
       </div>
     </form>
