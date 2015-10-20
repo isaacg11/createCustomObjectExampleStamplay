@@ -143,26 +143,27 @@
 <!--QUERY OUTPUT-->
 <div id="query">
   <ul id="queryResults" class="collection container z-depth-1">
-      <li class="collection-item center queryheader"><b>Query Results</b>
-      <li class="collection-item header"><b>Resturaunt:</b>
+      <li class="collection-item center queryheader">
+      <b>Resturaunt Query Results</b>
+      <li class="collection-item category"><b>Resturaunt:</b>
       <span class="queryheader" id="queryOutputName"></span></li>
-      <li class="collection-item header"><b>Cuisine: </b>
+      <li class="collection-item category"><b>Cuisine: </b>
       <span class="queryheader" id="queryOutputCuisine"></span></li>
-      <li class="collection-item header"><b>City: </b>
+      <li class="collection-item category"><b>City: </b>
       <span class="queryheader" id="queryOutputCity"></span></li>
-      <li class="collection-item header"><b>Address: </b>
+      <li class="collection-item category"><b>Address: </b>
       <span class="queryheader" id="queryOutputAddress"></span></li>
   </ul>
 <!--QUERY OPTIONS-->
   <ul id="options" class="collection container z-depth-1">
       <li class="collection-item center queryheader"><b>Query Options</b>
       <li class="collection-item data">
-      <b class="header">Cuisine: </b>
+      <b class="category">Cuisine: </b>
       <span class="queryheader">American, Chinese, Italian, Mexican</span>
       </li>
       <li class="collection-item data">
-      <b class="header">Cities: </b> 
-      <span class="queryheader">San Fransisco, Los Angeles, New York, Chicago</span>
+      <b class="category">Cities: </b> 
+      <span class="queryheader">San Fransisco, Los Angeles, New York City, Chicago</span>
       </li>
   </ul>
 
@@ -206,6 +207,80 @@
       </div>
     </form>
   </div>
+</div>
+<!--..............................TAB 4...............................-->
+
+<!--RATING/VOTING OUTPUT-->
+<div id="rate">
+  <ul id="queryResults" class="collection container z-depth-1">
+      <li class="collection-item center queryheader"><b>Example Resturaunt Data</b>
+      <li class="collection-item category"><b>Resturaunt:</b>
+      <span class="queryheader" id="rateOutputName"></span></li>
+      <li class="collection-item category"><b>Rating: </b>
+      <span class="queryheader" id="rateOutputRating"></span></li>
+      <li class="collection-item category"><b>Upvotes: </b>
+      <span class="queryheader" id="rateOutputUpvotes"></span></li>
+      <li class="collection-item category"><b>Review: </b>
+      <span class="queryheader" id="rateOutputReview"></span></li>
+  </ul>
+  <br>
+
+<!--RATING DROPDOWN-->
+  <div id="dropdown" class="input-field col s12 container">
+    <select>
+      <option value="" disabled selected> Rating?</option>
+      <option value="1">5</option>
+      <option value="2">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select>
+  </div>
+  <br>
+
+<!--UPVOTE/DOWNVOTE-->
+  <div id="voteSection" class="row center">
+      <div class="input-field col s6">
+        <a class="waves-effect waves-light btn-large thumbs">
+        <i class="fa fa-thumbs-o-up right"></i>Upvote</a>
+      </div>
+      <div class="input-field col s6">
+        <a class="waves-effect waves-light btn-large thumbs">
+        <i class="fa fa-thumbs-o-down right"></i>Downvote</a>
+      </div>
+  </div>
+
+<!--REVIEW SECTION-->
+  <div class="row container z-depth-1 createSection">
+    <form class="col s12">
+      <div class="row">
+        <p class="center ptag">
+          <b class='queryheader'>Leave a review</b>
+        </p>
+      </div>
+      <div class="row">
+        <div 
+        onclick="reset()" 
+        id="input"
+        class="input-field col s12">
+          <input  
+          placeholder="Review..." 
+          id="cuisine" 
+          type="text">
+        </div>
+      </div>
+      <div class="row center">
+        <div class="input-field col s12">
+          <a 
+          onclick="queryObject()" 
+          id="btn" 
+          class="waves-effect waves-light btn-large">
+          <i class="fa fa-check-square-o right"></i></i>SUBMIT</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
 </div>
 
 <!--SDK-->

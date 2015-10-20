@@ -100,5 +100,7 @@ function reset(){
 	document.getElementById('queryOutputAddress').innerHTML = ''; 
 }
 
-
+ $(document).ready(function() {
+    $('select').material_select();
+  });
 

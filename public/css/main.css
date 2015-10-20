@@ -94,4 +94,20 @@ body, html {
 .ptag{
 	padding-top: 10px;
 } 
-
+#dropdown{
+	width: 40%;
+	background-color: #FFFFFF;
+}
+#voteSection{
+	width: 40%;
+	background-color: #FFFFFF;
+	padding-bottom: 15px;
+}
+.thumbs{
+	background-color: #7A7F99;
+	width: 80%;
+}
+.thumbs:hover{
+	background-color: #7A7F99;
+	width: 100%;
+}
