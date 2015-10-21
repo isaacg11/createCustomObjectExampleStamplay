@@ -226,7 +226,9 @@
   <div id="ratingSection" class="row z-depth-1">
     <form action="#" class="col s12">
     <div class="row queryheader">
-      <p class="center"><b>Rate this resturaunt</b></p>
+      <p class="center">
+      <i class="fa fa-star-o"></i>
+      <b>Rate this resturaunt</b></p>
     </div>
       <div class="row">
         <div class="input-field col s2">
@@ -235,7 +237,8 @@
               onclick = "rateFive()" 
               type="checkbox" 
               id="fiveStars" />
-              <label for="fiveStars">5</label>
+              <label for="fiveStars">
+              <i class="fa fa-star-o"></i> 5</label>
           </p>
         </div>
         <div class="input-field col s2">
@@ -244,7 +247,8 @@
               onclick = "rateFour()" 
               type="checkbox" 
               id="fourStars" />
-              <label for="fourStars">4</label>
+              <label for="fourStars">
+              <i class="fa fa-star-o"></i> 4</label>
           </p>
         </div>
         <div class="input-field col s2">
@@ -253,7 +257,8 @@
               onclick = "rateThree()" 
               type="checkbox" 
               id="threeStars" />
-              <label for="threeStars">3</label>
+              <label for="threeStars">
+              <i class="fa fa-star-o"></i> 3</label>
           </p>
         </div>
         <div class="input-field col s2">
@@ -262,7 +267,8 @@
               onclick = "rateTwo()" 
               type="checkbox" 
               id="twoStars" />
-              <label for="twoStars">2</label>
+              <label for="twoStars">
+              <i class="fa fa-star-o"></i> 2</label>
           </p>
         </div>
         <div class="input-field col s2">
@@ -271,17 +277,13 @@
               onclick = "rateOne()" 
               type="checkbox" 
               id="oneStar" />
-              <label for="oneStar">1</label>
+              <label for="oneStar">
+              <i class="fa fa-star-o"></i> 1</label>
           </p>
         </div>
       </div>
     </form>
   </div>
-
-
-
-
-
 
 <!--UPVOTE/DOWNVOTE-->
   <div id="voteSection" class="row center z-depth-1">
@@ -310,14 +312,14 @@
         class="input-field col s12">
           <input  
           placeholder="Review..." 
-          id="cuisine" 
+          id="review" 
           type="text">
         </div>
       </div>
       <div class="row center">
         <div class="input-field col s12">
           <a 
-          onclick="queryObject()" 
+          onclick="review()" 
           id="btn" 
           class="waves-effect waves-light btn-large">
           <i class="fa fa-check-square-o right"></i></i>SUBMIT</a>

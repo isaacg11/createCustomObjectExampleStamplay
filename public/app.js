@@ -104,28 +104,53 @@ function reset(){
 /* RATE/UPVOTE/REVIEW SCRIPT  */
 /*----------------------------*/
 
+window.onload = function(){
+	var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+	objectInstance.fetch('5626bb424c0f20367d7c8472').then(function(){
+		var resturaunt = objectInstance.instance.resturaunt;
+		var review = objectInstance.instance.review;
+		document.getElementById('rateOutputName').innerHTML = resturaunt;
+		document.getElementById('rateOutputReview').innerHTML = review;
+	});
+};
 
 function rateFive(){
 	var a = document.getElementById("fiveStars").checked;
-	console.log(a);
+	if(a === true) {
+		a = 5;
+
+		var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+		objectInstance.fetch('5626bb424c0f20367d7c8472').then(
+  		function(){
+    		return objectInstance.rate(5);
+  		});
+	}
 }
 function rateFour(){
 	var b = document.getElementById("fourStars").checked;
-	console.log(b);
 }
 function rateThree(){
 	var c = document.getElementById("threeStars").checked;
-	console.log(c);
 }
 function rateTwo(){
 	var d = document.getElementById("twoStars").checked;
-	console.log(d);
 }
 function rateOne(){
 	var e = document.getElementById("oneStar").checked;
-	console.log(e);
 }
 
+
+function review(){
+	var userReview = document.getElementById('review').value;
+	var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+		objectInstance.fetch('5626bb424c0f20367d7c8472').then(function(){
+			objectInstance.set("review", userReview);
+			objectInstance.save();
+			var newReview = objectInstance.instance.review;
+			document.getElementById('rateOutputReview').innerHTML = newReview;
+			document.getElementById('review').value = "";
+		});
+}
 
 
 
