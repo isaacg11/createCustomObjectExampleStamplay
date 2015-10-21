@@ -226,7 +226,10 @@ function facebook(){
 }
 
 window.onload = function(){
+	console.log('hit');
 	var newUser = new Stamplay.User().Model;
+	console.log(newUser);
+
 	newUser.currentUser().then(function(){
 	var photo = newUser.get('profileImg');
 	var firstName = newUser.instance.identities.facebook._json.first_name;
@@ -256,6 +259,26 @@ function resetSignUp(){
 /* GET ALL DATA FOR APP */
 /*----------------------*/
 window.onload = function(){
+	var newUser = new Stamplay.User().Model;
+	console.log(newUser);
+
+	newUser.currentUser().then(function(){
+	var photo = newUser.get('profileImg');
+	var firstName = newUser.instance.identities.facebook._json.first_name;
+	var lastName = newUser.instance.identities.facebook._json.last_name;
+	var email = newUser.get('email');
+	var gender = newUser.instance.identities.facebook._json.gender;
+	var date = newUser.get('dt_create');
+	var id = newUser.get('_id');
+
+	document.getElementById('fbPhoto').src = photo;
+	document.getElementById('fbName').innerHTML = firstName + " " + lastName;
+	document.getElementById('fbEmail').innerHTML = email;
+	document.getElementById('fbGender').innerHTML = gender;
+	document.getElementById('fbDate').innerHTML = date;
+	document.getElementById('fbID').innerHTML = id;
+	});
+	
 	var bookInstance = new Stamplay.Cobject('book').Model;
 	bookInstance.fetch('562687934c0f20367d7c83a8').then(function() {
 	var title = bookInstance.get('title');
