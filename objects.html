@@ -214,9 +214,9 @@
       <li class="collection-item category"><b>Resturaunt:</b>
       <span class="queryheader" id="rateOutputName"></span></li>
       <li class="collection-item category"><b>Rating: </b>
-      <span class="queryheader" id="rateOutputRating"></span></li>
-      <li class="collection-item category"><b>Upvotes: </b>
-      <span class="queryheader" id="rateOutputUpvotes"></span></li>
+      <span class="queryheader" id="rateOutputRatings"></span></li>
+      <li class="collection-item category"><b>Likes: </b>
+      <span class="queryheader" id="rateOutputLikes"></span></li>
       <li class="collection-item category"><b>Review: </b>
       <span class="queryheader" id="rateOutputReview"></span></li>
   </ul>
@@ -266,7 +266,7 @@
             <input
               onclick = "rateTwo()" 
               type="checkbox" 
-              id="twoStars" />
+              id="twoStars"/>
               <label for="twoStars">
               <i class="fa fa-star-o"></i> 2</label>
           </p>
@@ -288,11 +288,15 @@
 <!--UPVOTE/DOWNVOTE-->
   <div id="voteSection" class="row center z-depth-1">
       <div class="input-field col s6">
-        <a class="waves-effect waves-light btn-large thumbs">
+        <a 
+          onclick="upvote()" 
+          class="waves-effect waves-light btn-large thumbs">
         <i class="fa fa-thumbs-o-up right"></i>Upvote</a>
       </div>
       <div class="input-field col s6">
-        <a class="waves-effect waves-light btn-large thumbs">
+        <a 
+          onclick="downvote()" 
+          class="waves-effect waves-light btn-large thumbs">
         <i class="fa fa-thumbs-o-down right"></i>Downvote</a>
       </div>
   </div>

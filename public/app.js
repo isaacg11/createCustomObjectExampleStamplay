@@ -95,39 +95,161 @@ function reset(){
 function rateFive(){
 	var a = document.getElementById("fiveStars").checked;
 	if(a === true) {
-		a = 5;
-
 		var objectInstance = new Stamplay.Cobject('resturaunt').Model;
-		objectInstance.fetch('5626bb424c0f20367d7c8472').then(
-  		function(){
-    		return objectInstance.rate(5);
+		objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
+    		return objectInstance.rate(5).then(function(){
+    		var ratings = objectInstance.instance.actions.ratings.avg;
+			document.getElementById('rateOutputRatings').innerHTML = ratings;
+    		});
   		});
 	}
 }
+
+
 function rateFour(){
 	var b = document.getElementById("fourStars").checked;
+	if(b === true) {
+		var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+		objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
+    		return objectInstance.rate(4).then(function(){
+    		var ratings = objectInstance.instance.actions.ratings.avg;
+			document.getElementById('rateOutputRatings').innerHTML = ratings;
+    		});
+  		});
+	}
 }
 function rateThree(){
 	var c = document.getElementById("threeStars").checked;
+	if(c === true) {
+		var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+		objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
+    		return objectInstance.rate(3).then(function(){
+    		var ratings = objectInstance.instance.actions.ratings.avg;
+			document.getElementById('rateOutputRatings').innerHTML = ratings;
+    		});
+  		});
+	}
 }
 function rateTwo(){
 	var d = document.getElementById("twoStars").checked;
+	if(d === true) {
+		var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+		objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
+    		return objectInstance.rate(2).then(function(){
+    		var ratings = objectInstance.instance.actions.ratings.avg;
+			document.getElementById('rateOutputRatings').innerHTML = ratings;
+    		});
+  		});
+	}
 }
 function rateOne(){
 	var e = document.getElementById("oneStar").checked;
+	if(e === true) {
+		var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+		objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
+    		return objectInstance.rate(1).then(function(){
+    		var ratings = objectInstance.instance.actions.ratings.avg;
+			document.getElementById('rateOutputRatings').innerHTML = ratings;
+    		});
+  		});
+	}
 }
 
 
 function review(){
 	var userReview = document.getElementById('review').value;
 	var objectInstance = new Stamplay.Cobject('resturaunt').Model;
-		objectInstance.fetch('5626bb424c0f20367d7c8472').then(function(){
+		objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
 			objectInstance.set("review", userReview);
 			objectInstance.save();
 			var newReview = objectInstance.instance.review;
 			document.getElementById('rateOutputReview').innerHTML = newReview;
 			document.getElementById('review').value = "";
 		});
+}
+
+function upvote(){
+	var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+	objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
+    	return objectInstance.upVote(1).then(function(){
+			var total = document.getElementById('rateOutputLikes').innerHTML;
+			var totalLikes = parseInt(total, 10) + 1;
+			document.getElementById('rateOutputLikes').innerHTML = totalLikes;
+    	});
+  	});
+}
+function downvote(){
+	var objectInstance = new Stamplay.Cobject('resturaunt').Model;
+	objectInstance.fetch('5627bc324c0f20367d7c9132').then(function(){		
+    	return objectInstance.downVote(1).then(function(){
+    		var total = document.getElementById('rateOutputLikes').innerHTML;
+			var totalLikes = parseInt(total, 10) - 1;
+			document.getElementById('rateOutputLikes').innerHTML = totalLikes;	
+    	});
+  	});
+}
+/*-----------*/
+/* SIGN UP   */
+/*-----------*/
+function signUp() {
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var password = document.getElementById("password").value;
+
+	var registrationData = {
+		displayname: name,
+  		email : email,
+  		password: password
+	};
+	var newUser = new Stamplay.User().Model;
+	newUser.signup(registrationData).then(function(){
+		var displayname = newUser.get('displayname');
+		var email = newUser.get('email');
+		var date = newUser.get('dt_create');
+		var id = newUser.get('_id');
+
+		document.getElementById('userOutputName').innerHTML = displayname;
+		document.getElementById('userOutputEmail').innerHTML = email;
+		document.getElementById('userOutputDate').innerHTML = date;
+		document.getElementById('userOutputID').innerHTML = id;
+
+		document.getElementById('name').value = "";
+		document.getElementById('email').value = "";
+		document.getElementById('password').value = "";
+		Materialize.toast('Success!', 4000);
+	});
+}
+
+function facebook(){
+	var newUser = new Stamplay.User().Model;
+	newUser.login('facebook');	
+}
+
+window.onload = function(){
+	var newUser = new Stamplay.User().Model;
+	newUser.currentUser().then(function(){
+	var photo = newUser.get('profileImg');
+	var firstName = newUser.instance.identities.facebook._json.first_name;
+	var lastName = newUser.instance.identities.facebook._json.last_name;
+	var email = newUser.get('email');
+	var gender = newUser.instance.identities.facebook._json.gender;
+	var date = newUser.get('dt_create');
+	var id = newUser.get('_id');
+
+	document.getElementById('fbPhoto').src = photo;
+	document.getElementById('fbName').innerHTML = firstName + " " + lastName;
+	document.getElementById('fbEmail').innerHTML = email;
+	document.getElementById('fbGender').innerHTML = gender;
+	document.getElementById('fbDate').innerHTML = date;
+	document.getElementById('fbID').innerHTML = id;
+	});
+};
+
+function resetSignUp(){
+		document.getElementById('userOutputName').innerHTML = '';
+		document.getElementById('userOutputEmail').innerHTML = '';
+		document.getElementById('userOutputDate').innerHTML = '';
+		document.getElementById('userOutputID').innerHTML = '';
 }
 
 /*----------------------*/
@@ -148,11 +270,23 @@ window.onload = function(){
 	});
 
 	var resturauntInstance = new Stamplay.Cobject('resturaunt').Model;
-	resturauntInstance.fetch('5626bb424c0f20367d7c8472').then(function(){
+	resturauntInstance.fetch('5627bc324c0f20367d7c9132').then(function(){
 		var resturaunt = resturauntInstance.instance.resturaunt;
 		var review = resturauntInstance.instance.review;
+		var ratings = resturauntInstance.instance.actions.ratings.avg;
+		var downvotes = resturauntInstance.instance.actions.votes.users_downvote;
+		for(var i = 0; i<downvotes.length; i++){
+    			downvotes = downvotes.length;
+		}
+		var upvotes = resturauntInstance.instance.actions.votes.users_upvote;
+		for(var j = 0; j<upvotes.length; j++){
+    			upvotes = upvotes.length;
+		}
+		var totalLikes = upvotes - downvotes;
 		document.getElementById('rateOutputName').innerHTML = resturaunt;
 		document.getElementById('rateOutputReview').innerHTML = review;
+		document.getElementById('rateOutputRatings').innerHTML = ratings;
+		document.getElementById('rateOutputLikes').innerHTML = totalLikes;
 	});
 };
 
