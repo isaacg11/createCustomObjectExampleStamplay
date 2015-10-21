@@ -23,7 +23,7 @@ function createObject(){
 	});
 }
 
-function reset(){
+function resetCreated(){
 	document.getElementById("objectOutputName").innerHTML = '';
 	document.getElementById("objectOutputAuthor").innerHTML = '';
 	document.getElementById("objectOutputDate").innerHTML = '';
@@ -34,20 +34,6 @@ function reset(){
 /* UPDATE OBJECT SCRIPT */
 /*----------------------*/
 
-window.onload = function(){
-	var objectInstance = new Stamplay.Cobject('book').Model;
-	objectInstance.fetch('562687934c0f20367d7c83a8').then(function() {
-	var title = objectInstance.get('title');
-	var author = objectInstance.get('author');
-	var date = objectInstance.get('dt_update');
-	var id = objectInstance.get('_id');
-	
-	document.getElementById('updateOutputName').innerHTML = title;
-	document.getElementById('updateOutputAuthor').innerHTML = author;
-	document.getElementById('updateOutputDate').innerHTML = date;
-	document.getElementById('updateOutputID').innerHTML = id;
-	});
-};
 
 function updateObject(){
 	var newTitle = document.getElementById('title').value;
@@ -104,15 +90,7 @@ function reset(){
 /* RATE/UPVOTE/REVIEW SCRIPT  */
 /*----------------------------*/
 
-window.onload = function(){
-	var objectInstance = new Stamplay.Cobject('resturaunt').Model;
-	objectInstance.fetch('5626bb424c0f20367d7c8472').then(function(){
-		var resturaunt = objectInstance.instance.resturaunt;
-		var review = objectInstance.instance.review;
-		document.getElementById('rateOutputName').innerHTML = resturaunt;
-		document.getElementById('rateOutputReview').innerHTML = review;
-	});
-};
+
 
 function rateFive(){
 	var a = document.getElementById("fiveStars").checked;
@@ -152,7 +130,31 @@ function review(){
 		});
 }
 
+/*----------------------*/
+/* GET ALL DATA FOR APP */
+/*----------------------*/
+window.onload = function(){
+	var bookInstance = new Stamplay.Cobject('book').Model;
+	bookInstance.fetch('562687934c0f20367d7c83a8').then(function() {
+	var title = bookInstance.get('title');
+	var author = bookInstance.get('author');
+	var date = bookInstance.get('dt_update');
+	var id = bookInstance.get('_id');
+	
+	document.getElementById('updateOutputName').innerHTML = title;
+	document.getElementById('updateOutputAuthor').innerHTML = author;
+	document.getElementById('updateOutputDate').innerHTML = date;
+	document.getElementById('updateOutputID').innerHTML = id;
+	});
 
+	var resturauntInstance = new Stamplay.Cobject('resturaunt').Model;
+	resturauntInstance.fetch('5626bb424c0f20367d7c8472').then(function(){
+		var resturaunt = resturauntInstance.instance.resturaunt;
+		var review = resturauntInstance.instance.review;
+		document.getElementById('rateOutputName').innerHTML = resturaunt;
+		document.getElementById('rateOutputReview').innerHTML = review;
+	});
+};
 
 
 
