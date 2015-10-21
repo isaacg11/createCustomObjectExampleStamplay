@@ -1,4 +1,6 @@
 Stamplay.init('createcustomobjectutorial');
+
+$(".dropdown-button").dropdown();
 /*----------------------*/
 /* CREATE OBJECT SCRIPT */
 /*----------------------*/
@@ -278,7 +280,7 @@ window.onload = function(){
 	document.getElementById('fbDate').innerHTML = date;
 	document.getElementById('fbID').innerHTML = id;
 	});
-	
+
 	var bookInstance = new Stamplay.Cobject('book').Model;
 	bookInstance.fetch('562687934c0f20367d7c83a8').then(function() {
 	var title = bookInstance.get('title');

@@ -8,14 +8,40 @@
 </head>
 <body class="container-fluid">
 <!--NAVBAR-->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a id="viewCode" href="#!">
+  <i class="fa fa-github left"></i>Code</a></li>
+  <li class="divider"></li>
+  <li><a id="tutorial" href="#!">
+  <i class="fa fa-youtube-square left"></i>Tutorial</a></li>
+  <li class="divider"></li>
+  <li><a 
+        target="_blank"
+        id="sdkdocs" 
+        href="https://stamplay.com/docs/jssdk">
+        <i class="fa fa-file-text-o left"></i>Docs
+      </a>
+  </li>
+</ul>
   <nav>
     <div id="navbar" class="nav-wrapper z-depth-2">
+      <a>
+        <img id="wordLogo" src="public/images/logo_White.png"/>
+      </a>
       <a href="" class="brand-logo center">
         <img id="logo" src="public/images/stamplay_logo.png"/>
       </a>
-      <ul>
-        <li class="right">
-          <a href="objects.html">Objects</a>
+      <ul id="resourceMenu" class="right">
+        <li id="objectNav">
+          <a href="objects.html"><i class="fa fa-cubes left"></i>CUSTOM OBJECT SDK</a>
+        </li>
+        <li>
+          <a 
+            class="dropdown-button" 
+            href="#!" 
+            data-activates="dropdown1">
+              <i class="fa fa-caret-down right"></i>RESOURCES
+          </a>
         </li>
       </ul>
     </div>
@@ -32,7 +58,7 @@
     </div>
   </div>
 <!--EMAIL & PASSWORD RESOURCES-->
-  <div class="right z-depth-1 resources">
+<!--   <div class="right z-depth-1 resources">
     <div class="row center">
       <p><b>RESOURCES<b></p>
   </div>
@@ -61,7 +87,7 @@
         </a>
     </div>
     <br>
-  </div>
+  </div> -->
 <!--EMAIL & PASSWORD USER OUTPUT SECTION-->
       <div id="local" class="col s12">
          <ul id="userOutput" class="collection container z-depth-1">

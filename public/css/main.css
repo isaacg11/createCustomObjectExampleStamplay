@@ -33,7 +33,6 @@
 #userOutput{
 	width: 40%;
 	margin-top: 30px;
-	margin-right: 92px;
 }
 .data{
 	color: #B0B2B5;
@@ -94,13 +93,7 @@
 	border:1px solid;
 	border-color: #EEEEEE;
 }
-.resources{
-	background-color: #272D4E;
-	color: #FFFFFF;
-	width: 20%;
-	margin-right: 50px;
-	margin-top: 10px;
-}
+
 
 /*----------------------------------------------------------------------------*/
 /*OBJECTS CSS*/
@@ -122,8 +115,35 @@ body, html {
     height: 70px;
 	margin-top: 5px;
 }
+#wordLogo{
+	padding: 10px;
+    height: 45px;
+	margin-top: 15px;
+}
+#resourceMenu{
+	margin-top: 10px;
+	margin-right: 10px;
+}
+#objectNav{
+	margin-right: 30px;
+}
+#viewCode{
+	color: #000000;
+	background-color: #FBC02D;
+}
+#tutorial{
+	color: #000000;
+	background-color: #FBC02D;
+}
+#sdkdocs{
+	color: #000000;
+	background-color: #FBC02D;
+}
+.divider{
+	background-color: #000000;
+}
 .tabs{
-	margin-top: 17px;
+	margin-top: 7px;
 	min-width: 100vw;
 }   
 .tabs .tab a{
