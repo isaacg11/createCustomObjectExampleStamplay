@@ -100,7 +100,37 @@ function reset(){
 	document.getElementById('queryOutputAddress').innerHTML = ''; 
 }
 
- $(document).ready(function() {
-    $('select').material_select();
-  });
+/*----------------------------*/
+/* RATE/UPVOTE/REVIEW SCRIPT  */
+/*----------------------------*/
+
+
+function rateFive(){
+	var a = document.getElementById("fiveStars").checked;
+	console.log(a);
+}
+function rateFour(){
+	var b = document.getElementById("fourStars").checked;
+	console.log(b);
+}
+function rateThree(){
+	var c = document.getElementById("threeStars").checked;
+	console.log(c);
+}
+function rateTwo(){
+	var d = document.getElementById("twoStars").checked;
+	console.log(d);
+}
+function rateOne(){
+	var e = document.getElementById("oneStar").checked;
+	console.log(e);
+}
+
+
+
+
+
+
+
+
 

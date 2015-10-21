@@ -103,6 +103,11 @@ body, html {
 	background-color: #FFFFFF;
 	padding-bottom: 15px;
 }
+#ratingSection{
+	width: 40%;
+	background-color: #FFFFFF;
+	padding-bottom: 15px;
+}
 .thumbs{
 	background-color: #7A7F99;
 	width: 80%;
