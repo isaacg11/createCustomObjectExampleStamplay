@@ -1,6 +1,11 @@
 Stamplay.init('createcustomobjectutorial');
 
 $(".dropdown-button").dropdown();
+
+ $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
 /*----------------------*/
 /* CREATE OBJECT SCRIPT */
 /*----------------------*/
@@ -8,12 +13,23 @@ $(".dropdown-button").dropdown();
 function createObject(){
 	var objectName = document.getElementById('objectName').value;
 	var objectAuthor = document.getElementById('objectAuthor').value;
+	var objectPrice = document.getElementById('objectPrice').value;
+	var objectDate = document.getElementById('objectDate').value;
+	var published = new Date(objectDate);
+	var price = parseFloat(objectPrice);
+	console.log(price);
+
 	var objectInstance = new Stamplay.Cobject('book').Model;
 	objectInstance.set('title', objectName);
 	objectInstance.set('author', objectAuthor);
+	objectInstance.set('price', price);
+	objectInstance.set('datePublished', published);
 	objectInstance.save().then(function(){
+
 		var title = objectInstance.get('title');
 		var author = objectInstance.instance.author;
+		var price = objectInstance.instance.price;
+		var datePublished = objectInstance.instance.datepublished;
 		var date = objectInstance.get('dt_create');
 		var id = objectInstance.get('_id');
 		document.getElementById("objectOutputName").innerHTML = title;
@@ -22,6 +38,8 @@ function createObject(){
 		document.getElementById("objectOutputID").innerHTML = id;
 		document.getElementById("objectName").value = "";
 		document.getElementById("objectAuthor").value = "";
+		document.getElementById("objectPrice").value = "";
+		document.getElementById("objectDate").value = "";
 	});
 }
 
@@ -262,8 +280,6 @@ function resetSignUp(){
 /*----------------------*/
 window.onload = function(){
 	var newUser = new Stamplay.User().Model;
-	console.log(newUser);
-
 	newUser.currentUser().then(function(){
 	var photo = newUser.get('profileImg');
 	var firstName = newUser.instance.identities.facebook._json.first_name;
